@@ -1,0 +1,236 @@
+// Vendors
+@import "vendors/bootstrap/bootstrap.scss";
+@import "vendors/slick/slick.scss";
+@import "vendors/slick/slick-theme.scss";
+// @import "vendors/fontawesome/all.min.scss";
+
+// Config
+@import "config/functions";
+@import "config/variables";
+@import "config/mixins";
+
+// Base and elements (generic)
+@import "base/base";
+
+// LAYOUT
+  // Escribe solo los estilos de layout (division en regiones del viewport)
+@import "layout/layout";
+
+// MODULOS
+@import "components/animations";
+@import "components/buttons";
+@import "components/menus";
+@import "components/hero";
+@import "components/products";
+@import "components/recetas";
+@import "components/locations";
+
+// Theme (colors and fonts)
+@import "theme/typography";
+
+// Utilities (hacks)
+  // Todos los hacks que hayas necesitado para solucionar conflictos
+  // o resolver situaciones extremas. Se espera poder mejorarlos luego.
+@import "hacks/hacks";
+
+body.home {
+  overflow-x: hidden;
+}
+
+#page {
+  overflow: visible;
+  overflow-x: hidden;
+}
+
+.main-bg {
+  position: relative;
+  margin-top: 18rem;
+
+  @include media-breakpoint-up('md') {
+    margin-top: 20rem;
+  }
+
+  @include media-breakpoint-up('lg') {
+    margin-top: 30rem;
+  }
+}
+
+.main-bg__container {
+  
+  @include media-breakpoint-up('md') {
+    margin-top: -4rem;
+  }
+
+  @include media-breakpoint-up('lg') {
+    margin-top: -7rem;
+  }
+}
+
+.vaso-resource {
+  position: absolute;
+  // left: -15%;
+  left: calc(50% - 250px);
+  width: 500px;
+
+  @include media-breakpoint-up('lg') {
+    width: auto;
+    max-width: 650px;
+  }
+}
+
+.botella-sola-resource {
+  width: 100%;
+  max-width: 420px;
+  z-index: 9;
+  position: absolute;
+  top: -4rem;
+}
+
+.recetas-section,
+.products-section,
+.tomalo-section {
+  position: relative;
+}
+
+@keyframes around {
+  from, to {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes around-02 {
+  from, to {
+    transform: rotate(173deg);
+  }
+
+  50% {
+    transform: rotate(167deg);
+  }
+}
+
+@keyframes around-03 {
+  from, to {
+    transform: rotate(-57deg);
+  }
+
+  50% {
+    transform: rotate(-63deg);
+  }
+}
+
+.sabila-01 {
+  position: absolute;
+  left: -17rem;
+  top: -12rem;
+  animation: around 2.5s ease-in-out infinite;
+  z-index: 2;
+  
+  @include media-breakpoint-up('md') {
+    left: -18rem;
+  }
+
+  @include media-breakpoint-up('md') {
+    left: -14rem;
+  }
+}
+
+.sabila-02 {
+  position: absolute;
+  transform: rotate(170deg);
+  right: -17rem;
+  animation: around-02 2.5s ease-in-out infinite;
+  z-index: 2;
+
+  @include media-breakpoint-up('md') {
+    right: -14rem;
+  }
+
+  @include media-breakpoint-up('md') {
+    right: -11rem;
+  }
+}
+
+.sabila-03 {
+  position: absolute;
+  right: auto;
+  left: -25rem;
+  top: -20rem;
+  transform: rotate(-60deg);
+  animation: around-03 2.5s ease-in-out infinite reverse;
+  z-index: 2;
+
+  @include media-breakpoint-up('md') {
+    left: -18rem;
+  }
+}
+
+.recetas-slider,
+.recetas-modal-slider {
+  position: relative;
+
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  &-prev {
+    left: 1rem;
+    
+    @include media-breakpoint-up('sm') {
+      left: -4rem;
+    }
+  }
+  
+  &-next {
+    right: 1rem;
+    
+    @include media-breakpoint-up('sm') {
+      right: -3.5rem;
+    }
+  }
+}
+
+.recetas-slider {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  &-prev {
+    left: -2rem;
+  }
+  
+  &-next {
+    right: -2rem;
+  }
+}
+
+.slick-slide {
+  &:focus {
+    outline: 0;
+  }
+}
+
+.rounded-1rem {
+  border-radius: 1rem;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+#video {
+  @include media-breakpoint-down('md') {
+    border-radius: 2rem;
+  }
+}

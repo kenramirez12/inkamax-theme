@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'HeadingFont';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/thinking_of_betty.ttf') format('ttf'), url('../fonts/thinking_of_betty-webfont.woff2') format('woff2');
+}
+
+.heading-font {
+  font-family: 'HeadingFont', sans-serif;
+}

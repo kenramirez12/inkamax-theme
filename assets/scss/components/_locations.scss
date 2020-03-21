@@ -1,0 +1,25 @@
+.location {
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.location-content {
+  display: flex;
+  align-items: center;
+  
+  &__image {
+    width: 120px;
+    margin-right: 1rem;
+    
+    img {
+      border-radius: .5rem;
+    }
+  }
+
+  &__description {
+    margin-bottom: 0;
+  }
+}

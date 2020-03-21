@@ -1,0 +1,108 @@
+.admin-bar {
+  .main-header {
+    top: 46px;
+
+    @media screen and (min-width: 782px) {
+      top: 32px;
+    }
+  }
+}
+
+.main-header {
+  background-image: url(../img/header-bg.svg);
+  background-position: center 0;
+  background-repeat: no-repeat;
+  padding-top: 1rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  
+  @include media-breakpoint-up('md') {
+    padding-top: 1.5rem;
+  }
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+
+  img {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    width: 200px;
+    height: 130px;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+.footer-container {
+  position: relative;
+  min-height: 768px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  @include media-breakpoint-up('md') {
+    margin-bottom: -90px;
+  }
+
+  @include media-breakpoint-up('lg') {
+    margin-bottom: -200px;
+  }
+}
+
+.footer-bg {
+  width: 100%;
+}
+
+.footer-content {
+  
+  @include media-breakpoint-up('lg') {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.footer-car {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: -6rem;
+
+  @include media-breakpoint-up('lg') {
+    bottom: 1rem;
+    right: 0rem;
+  }
+}
+
+.main-bg {
+  background: linear-gradient(to right, #8ad73d 6%, #d1ed5c 47%, #8ad73d 87%);
+  margin-bottom: 100px;
+
+  @include media-breakpoint-up('md') {
+    margin-bottom: 150px;
+  }
+
+  @include media-breakpoint-up('lg') {
+    margin-bottom: 275px;
+  }
+}
+
+.wpcf7-response-output {
+  text-align: center;
+}

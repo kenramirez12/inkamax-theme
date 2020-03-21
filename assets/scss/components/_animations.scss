@@ -1,0 +1,149 @@
+  
+.hover\:zoom-in {
+  transition: all 0.35s;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+
+[data-animation] {
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(.420, 0, 1, 1);
+}
+
+@for $i from 1 through 60 {
+  [data-animation-delay='#{$i * 50}'] {
+    transition-delay:  #{$i * 50}ms!important;
+  }
+}
+
+.fade-down {
+  transform: translate3d(0, -100px, 0);
+
+  &.show {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fade-up {
+  transform: translate3d(0, 100px, 0);
+  transition: all 0.5s cubic-bezier(.17,.67,.36,1.36);
+
+  &.show {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  transform: scale(.3);
+
+  &.show {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.zig-zag-path {
+  stroke-dasharray: 1660;
+  stroke-dashoffset: 1660;
+  transition: stroke-dashoffset 1s linear, opacity .1s;
+
+  &.show {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+.botella-right {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  transition: all 0.5s cubic-bezier(.17,.67,.36,1.36) 0.5s;
+
+  &.show {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+.animation-bounce {
+  animation: bounce 1s infinite;
+
+  @keyframes bounce {
+    from, to {
+      transform: rotate(-3deg);
+    }
+
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+}
+
+.bubble {
+  --size: 90px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  position: absolute;
+  opacity: .4;
+  border: 1px solid #bce9f1;
+  box-shadow: inset 0 0 20px #bce9f1;
+  animation: moveAround 3s infinite linear;
+  z-index: 2;
+
+  &-50 {
+    opacity: .6;
+  }
+
+  &--xs {
+    --size: 25px;
+    animation: moveAround 3s infinite linear;
+  }
+
+  &--sm {
+    --size: 45px;
+    animation: moveAround 3s infinite linear;
+  }
+
+  &--lg {
+    --size: 120px;
+  }
+
+  &-primary {
+    background-color: $primary;
+    // background-color: rgba($primary, .2);
+  }
+
+  &-secondary {
+    background-color: $secondary;
+    // background-color: rgba($secondary, .2);
+  }
+
+  @keyframes moveAround {
+    from {
+      transform: rotate(0deg)
+                 translate(-8px)
+                 rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg)
+                 translate(-8px) 
+                 rotate(-360deg);
+    }
+  }
+}
+
+.delay-1 {
+  animation-delay: .5s;
+}
+
+.delay-2 {
+  animation-delay: 1.25s;
+}
+
+.delay-3 {
+  animation-delay: 1.75s;
+}
